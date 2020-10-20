@@ -1,21 +1,31 @@
-<h2>User info</h2>
+<div class="container">
+  <p id="notice"></p>
+  <h2>User info</h2>
+  <% if @user.errors.any? %>
+    <ul>
+      <%= @user.errors.count %>errors prohibited this obj from being saved:
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
 
-<% if @user.errors.any? %>
-  <ul>
-    <%= @user.errors.count %>errors prohibited this obj from being saved:
-    <% @user.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
-
-<%= form_with model: @user, local: true do |f| %>
-  <div>Name</div>
-  <div><%= f.text_field :name %></div>
-  <div><%= f.attachment_field :profile_image %></div>
-  <div>Introduction</div>
-  <div><%= f.text_area :introduction %></div>
-  <div><%= f.submit 'Update User' %></div>
-<% end %>
-
+  <%= form_with model: @user, local: true do |f| %>
+    <div class="field">
+      <div class="h5">Name</h5>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <h5>Image</h5>
+      <%= f.attachment_field :profile_image %>
+    </div>
+    <div class="field">
+      <div class="h5">Introduction</h5>
+      <%= f.text_area :introduction %>
+    </div>
+    <div class="actions">
+      <%= f.submit 'Update User' %>
+    </div>
+  <% end %>
+</div>
 

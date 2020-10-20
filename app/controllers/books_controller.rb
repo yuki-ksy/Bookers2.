@@ -3,6 +3,7 @@ class BooksController < ApplicationController
   before_action :user_check, only: [:edit]
   def show
     @book = Book.find(params[:id])
+    @user = @book.user
   end
 
   def index
