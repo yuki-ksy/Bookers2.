@@ -15,14 +15,17 @@
       <div class="h5">Name</h5>
       <%= f.text_field :name %>
     </div>
+
     <div class="field">
       <h5>Image</h5>
       <%= f.attachment_field :profile_image %>
     </div>
+
     <div class="field">
       <div class="h5">Introduction</h5>
       <%= f.text_area :introduction %>
     </div>
+
     <div class="actions">
       <%= f.submit 'Update User' %>
     </div>
