@@ -4,7 +4,6 @@
     <div class="col-xs-3">
       <%= render 'users/user', book: @book, user: current_user %>
     </div>
-
     <% if @book.errors.any? %>
       <ul>
         <%= @book.errors.count %>errors prohibited this obj from being saved:
@@ -13,10 +12,9 @@
         <% end %>
       </ul>
     <% end %>
-
     <div class="col-xs-9">
       <h1>Books</h1>
-       <table class="table table-hover table-inverse">
+      <table class="table table-hover table-inverse">
         <thead>
           <tr>
             <th></th>
